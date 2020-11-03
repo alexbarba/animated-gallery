@@ -1,68 +1,46 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">galeria-animada</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div class="flex align-center justify-center">
+    <Carousel :images="images" />
   </div>
 </template>
 
 <script>
-export default {}
+import Carousel from '../components/Carousel'
+
+export default {
+  name: 'AnimatedGallery',
+  components: {
+    Carousel,
+  },
+  data: () => {
+    return {
+      images: [
+        {
+          title: 'Anchorage',
+          src:
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Anchorage_on_an_April_evening.jpg/1200px-Anchorage_on_an_April_evening.jpg',
+          description: 'Alaska 1',
+        },
+        {
+          title: 'Example 2',
+          src:
+            'https://www.cuandovisitar.es/uploads/2017/10/beste-reistijd-alaska-verenigde-staten-640x360.jpg',
+          description: 'Alaska 2',
+        },
+        {
+          title: 'Example 3',
+          src:
+            'https://www.fodors.com/wp-content/uploads/2019/02/HERO_Ultimate_Alaska_dreamstime_l_50550160.jpg',
+          description: 'Alaska 3',
+        },
+        {
+          title: 'Example 4',
+          src:
+            'https://thumbnails.expedia.com/jSRRAgOOVYDZFGAt8IKh_R7ZovA=/536x384/smart/filters:quality(60)/a.cdn-hotels.com/cos/heroimage/Anchorage_500px_66230277.jpg',
+          description: 'Alaska 4',
+        },
+      ],
+    }
+  },
+}
 </script>
-
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
