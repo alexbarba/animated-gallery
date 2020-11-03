@@ -43,6 +43,6 @@ export default {
   build: {},
 
   router: {
-    base: '/'
+    base: '/animated-gallery'
   }
 }
